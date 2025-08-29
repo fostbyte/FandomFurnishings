@@ -223,7 +223,7 @@ h1, h2, h3, h4, h5, h6 {
 .hero-bg {
     position: absolute;
     inset: 0;
-    background-image: url('https://www.instagram.com/fandomfurnishings/p/DE8bJMcuxWk');
+    background-image: "\\assets\\background.jpg.png";
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
