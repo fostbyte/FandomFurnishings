@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fandom Furnishings - Custom Art & Handcrafted Decor</title>
+    <meta name="description" content="Custom handcrafted art and decor featuring engraved cups, wood burning, epoxy art, paintings, tables, and wall art. Bringing your favorite fandoms to life through unique artistic pieces.">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Fandom Furnishings - Custom Art & Handcrafted Decor">
+    <meta property="og:description" content="Custom handcrafted art and decor featuring engraved cups, wood burning, epoxy art, paintings, tables, and wall art. Bringing your favorite fandoms to life through unique artistic pieces.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fandomfurnishings.com">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header" class="header">
+        <nav class="nav-container">
+            <div class="nav-content">
+                <div class="brand">
+                    <div class="brand-icon" id="palette-icon"></div>
+                    <div class="brand-text">
+                        <h1 class="brand-title">Fandom Furnishings</h1>
+                        <p class="brand-subtitle">Custom Art & Handcrafted Decor</p>
+                    </div>
+                </div>
+                
+                <div class="nav-links">
+                    <button class="nav-link" onclick="scrollToSection('gallery')" data-testid="nav-gallery">Gallery</button>
+                    <button class="nav-link" onclick="scrollToSection('services')" data-testid="nav-services">Services</button>
+                    <button class="nav-link" onclick="scrollToSection('about')" data-testid="nav-about">About</button>
+                    <button class="nav-link" onclick="scrollToSection('contact')" data-testid="nav-contact">Contact</button>
+                    <a href="https://www.instagram.com/fandomfurnishings/" target="_blank" rel="noopener noreferrer" class="nav-instagram" data-testid="nav-instagram">
+                        <div id="instagram-icon"></div>
+                    </a>
+                </div>
+                
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" data-testid="mobile-menu-toggle">
+                    <div id="mobile-menu-icon"></div>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu">
+                <div class="mobile-menu-content">
+                    <button class="mobile-nav-link" onclick="scrollToSection('gallery')" data-testid="mobile-nav-gallery">Gallery</button>
+                    <button class="mobile-nav-link" onclick="scrollToSection('services')" data-testid="mobile-nav-services">Services</button>
+                    <button class="mobile-nav-link" onclick="scrollToSection('about')" data-testid="mobile-nav-about">About</button>
+                    <button class="mobile-nav-link" onclick="scrollToSection('contact')" data-testid="mobile-nav-contact">Contact</button>
+                    <a href="https://www.instagram.com/fandomfurnishings/" target="_blank" rel="noopener noreferrer" class="mobile-nav-instagram" data-testid="mobile-nav-instagram">
+                        <div id="mobile-instagram-icon"></div>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h2 class="hero-title">
+                Bringing Your
+                <span class="hero-highlight"> Fandoms</span>
+                <br>to Life
+            </h2>
+            <p class="hero-description">
+                Custom handcrafted art and decor featuring engraved cups, wood burning, epoxy art, paintings, tables, and wall art
+            </p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToSection('gallery')" data-testid="hero-view-gallery">
+                    View Gallery
+                </button>
+                <button class="btn btn-outline" onclick="scrollToSection('contact')" data-testid="hero-get-quote">
+                    Get Custom Quote
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Art Gallery</h2>
+                <p class="section-description">
+                    Explore our diverse collection of custom artwork across different mediums and styles
+                </p>
+            </div>
+
+            <!-- Gallery Categories -->
+            <div class="gallery-categories">
+                <button class="category-btn active" onclick="filterGallery('all')" data-testid="gallery-filter-all">All</button>
+                <button class="category-btn" onclick="filterGallery('cups')" data-testid="gallery-filter-cups">Engraved Cups</button>
+                <button class="category-btn" onclick="filterGallery('wood')" data-testid="gallery-filter-wood">Wood Burning</button>
+                <button class="category-btn" onclick="filterGallery('epoxy')" data-testid="gallery-filter-epoxy">Epoxy Art</button>
+                <button class="category-btn" onclick="filterGallery('paintings')" data-testid="gallery-filter-paintings">Paintings</button>
+                <button class="category-btn" onclick="filterGallery('tables')" data-testid="gallery-filter-tables">Tables</button>
+                <button class="category-btn" onclick="filterGallery('wallart')" data-testid="gallery-filter-wallart">Wall Art</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-grid" id="gallery-grid">
+                <div class="gallery-item" data-category="cups" onclick="openLightbox('https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600', 'Custom engraved anime mug')" data-testid="gallery-item-1">
+                    <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600" alt="Custom engraved anime mug" loading="lazy">
+                </div>
+                <div class="gallery-item" data-category="cups" onclick="openLightbox('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600', 'Fandom quote engraved mug')" data-testid="gallery-item-2">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600" alt="Fandom quote engraved mug" loading="lazy">
+                </div>
+                <div class="gallery-item" data-category="wood" onclick="openLightbox('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600', 'Fantasy wood burned art')" data-testid="gallery-item-3">
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600" alt="Fantasy wood burned art" loading="lazy">
+                </div>
+                <div class="gallery-item" data-category="wood" onclick="openLightbox('https://pixabay.com/get/gde32e3ace696a73623a613b84351d831a3e3b1ca051e6bb7c1ea372ee374e2639024170b8a20f4e454541ef34daf435844281b3eb84ebf483216aa0eb08d345d_1280.jpg', 'Decorative wood burned cutting board')" data-testid="gallery-item-4">
+                    <img src="https://pixabay.com/get/gde32e3ace696a73623a613b84351d831a3e3b1ca051e6bb7c1ea372ee374e2639024170b8a20f4e454541ef34daf435844281b3eb84ebf483216aa0eb08d345d_1280.jpg" alt="Decorative wood burned cutting board" loading="lazy">
+                </div>
+                <div class="gallery-item" data-category="epoxy" onclick="openLightbox('https://images.unsplash.com/photo-1578321272176-b7bbc0679853?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600', 'Ocean-themed epoxy resin art')" data-testid="gallery-item-5">
+                    <img src="https://images.unsplash.com/photo-1578321272176-b7bbc0679853?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600" alt="Ocean-themed epoxy resin art" loading="lazy">
+                </div>
+                <div class="gallery-item" data-category="epoxy" onclick="openLightbox('https://pixabay.com/get/g47d0ba08ed12cd831f070537a7326e1080525e50964f9a9d198ea9c75b345c7d83d47472a9d164f9d382bbe90b562c69_1280.jpg', 'Galaxy epoxy art with metallics')" data-testid="gallery-item-6">
+                    <img src="https://pixabay.com/get/g47d0ba08ed12cd831f070537a7326e1080525e50964f9a9d198ea9c75b345c7d83d47472a9d164f9d382bbe90b562c69_1280.jpg" alt="Galaxy epoxy art with metallics" loading="lazy">
+                </div>
+                <div class="gallery-item" data-category="paintings" onclick="openLightbox('https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600', 'Pop art anime character painting')" data-testid="gallery-item-7">
+                    <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600" alt="Pop art anime character painting" loading="lazy">
+                </div>
+                <div class="gallery-item" data-category="paintings" onclick="openLightbox('https://images.unsplash.com/photo-1578321272176-b7bbc0679853?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600', 'Fantasy landscape painting')" data-testid="gallery-item-8">
+                    <img src="https://images.unsplash.com/photo-1578321272176-b7bbc0679853?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600" alt="Fantasy landscape painting" loading="lazy">
+                </div>
+                <div class="gallery-item" data-category="tables" onclick="openLightbox('https://images.unsplash.com/photo-1549497538-303791108f95?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600', 'Custom fandom dining table')" data-testid="gallery-item-9">
+                    <img src="https://images.unsplash.com/photo-1549497538-303791108f95?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600" alt="Custom fandom dining table" loading="lazy">
+                </div>
+                <div class="gallery-item" data-category="tables" onclick="openLightbox('https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600', 'Epoxy river coffee table with LED')" data-testid="gallery-item-10">
+                    <img src="https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600" alt="Epoxy river coffee table with LED" loading="lazy">
+                </div>
+                <div class="gallery-item" data-category="wallart" onclick="openLightbox('https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600', 'Multi-fandom canvas wall art')" data-testid="gallery-item-11">
+                    <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600" alt="Multi-fandom canvas wall art" loading="lazy">
+                </div>
+                <div class="gallery-item" data-category="wallart" onclick="openLightbox('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600', 'Geometric metal wall sculpture')" data-testid="gallery-item-12">
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=600" alt="Geometric metal wall sculpture" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-description">
+                    From concept to creation, we bring your favorite fandoms to life through various artistic mediums
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon" id="coffee-icon"></div>
+                    <h3 class="service-title">Custom Engraved Cups</h3>
+                    <p class="service-description">Personalized mugs and tumblers with your favorite characters, quotes, and designs. Perfect for daily use or gifts.</p>
+                    <ul class="service-features">
+                        <li>• Ceramic and stainless steel options</li>
+                        <li>• Dishwasher safe engravings</li>
+                        <li>• Custom quotes and characters</li>
+                        <li>• Various sizes available</li>
+                    </ul>
+                    <p class="service-price">Starting at $25</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon" id="flame-icon"></div>
+                    <h3 class="service-title">Wood Burning Art</h3>
+                    <p class="service-description">Intricate pyrography artwork on wooden panels, cutting boards, and decorative pieces featuring your beloved fandoms.</p>
+                    <ul class="service-features">
+                        <li>• Natural wood finishes</li>
+                        <li>• Detailed character portraits</li>
+                        <li>• Functional and decorative pieces</li>
+                        <li>• Custom size options</li>
+                    </ul>
+                    <p class="service-price">Starting at $45</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon" id="palette-icon-service"></div>
+                    <h3 class="service-title">Epoxy Resin Art</h3>
+                    <p class="service-description">Stunning resin artwork with vibrant colors, metallic accents, and embedded elements inspired by your favorite universes.</p>
+                    <ul class="service-features">
+                        <li>• Ocean and galaxy themes</li>
+                        <li>• Metallic and glitter accents</li>
+                        <li>• UV-resistant finish</li>
+                        <li>• Coaster sets and wall art</li>
+                    </ul>
+                    <p class="service-price">Starting at $35</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon" id="brush-icon"></div>
+                    <h3 class="service-title">Custom Paintings</h3>
+                    <p class="service-description">Hand-painted artwork on canvas featuring characters, scenes, and symbols from your favorite fandoms in various artistic styles.</p>
+                    <ul class="service-features">
+                        <li>• Acrylic and oil painting options</li>
+                        <li>• Multiple art styles available</li>
+                        <li>• Canvas and wood panel surfaces</li>
+                        <li>• Commission-based pricing</li>
+                    </ul>
+                    <p class="service-price">Starting at $75</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon" id="table-icon"></div>
+                    <h3 class="service-title">Custom Tables</h3>
+                    <p class="service-description">Handcrafted furniture pieces with fandom-inspired designs, epoxy inlays, and LED lighting for a unique centerpiece.</p>
+                    <ul class="service-features">
+                        <li>• Coffee and dining tables</li>
+                        <li>• Epoxy river designs</li>
+                        <li>• LED lighting integration</li>
+                        <li>• Custom dimensions</li>
+                    </ul>
+                    <p class="service-price">Starting at $350</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon" id="image-icon"></div>
+                    <h3 class="service-title">Wall Art</h3>
+                    <p class="service-description">Large-scale artwork including metal sculptures, canvas prints, and mixed-media pieces to transform your space.</p>
+                    <ul class="service-features">
+                        <li>• Metal and wood constructions</li>
+                        <li>• Canvas and print options</li>
+                        <li>• Mixed-media compositions</li>
+                        <li>• Installation services available</li>
+                    </ul>
+                    <p class="service-price">Starting at $125</p>
+                </div>
+            </div>
+
+            <div class="services-cta">
+                <button class="btn btn-primary btn-large" onclick="scrollToSection('contact')" data-testid="services-get-quote">
+                    Get Custom Quote
+                    <div id="arrow-right-icon"></div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About Fandom Furnishings</h2>
+                    <p class="about-intro">
+                        We're passionate artists who believe that your living space should reflect the stories, characters, and worlds that inspire you most.
+                    </p>
+                    <p class="about-description">
+                        From intricate wood burned portraits to stunning epoxy resin pieces, each item is carefully handcrafted with attention to detail and a deep appreciation for fandom culture. Whether you're looking to showcase your love for anime, gaming, movies, or books, we create unique pieces that become conversation starters and cherished keepsakes.
+                    </p>
+                    
+                    <div class="about-stats">
+                        <div class="stat">
+                            <div class="stat-number">3+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Happy Customers</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">6</div>
+                            <div class="stat-label">Art Mediums</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Handmade</div>
+                        </div>
+                    </div>
+
+                    <div class="about-buttons">
+                        <a href="https://www.instagram.com/fandomfurnishings/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-testid="about-instagram">
+                            <div id="about-instagram-icon"></div>
+                            Follow on Instagram
+                        </a>
+                        <button class="btn btn-outline" onclick="scrollToSection('contact')" data-testid="about-contact">
+                            Get in Touch
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000" alt="Artist workspace with creative tools and materials" class="about-img">
+                    
+                    <div class="about-badge">
+                        <div class="status-indicator"></div>
+                        <div class="status-text">Currently crafting custom orders</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-description">
+                    Ready to bring your favorite fandom to life? Let's discuss your custom art project
+                </p>
+            </div>
+
+            <div class="contact-content">
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <div class="contact-card">
+                        <h3 class="contact-card-title">Request Custom Quote</h3>
+                        
+                        <form name="contact" method="POST" data-netlify="true" class="contact-form" id="contact-form">
+                            <input type="hidden" name="form-name" value="contact">
+                            
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="name" class="form-label">Full Name *</label>
+                                    <input type="text" id="name" name="name" required class="form-input" data-testid="contact-name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email *</label>
+                                    <input type="email" id="email" name="email" required class="form-input" data-testid="contact-email">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" class="form-input" data-testid="contact-phone">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="service" class="form-label">Service Type *</label>
+                                <select id="service" name="service" required class="form-select" data-testid="contact-service">
+                                    <option value="">Select a service</option>
+                                    <option value="engraved-cups">Engraved Cups</option>
+                                    <option value="wood-burning">Wood Burning Art</option>
+                                    <option value="epoxy-art">Epoxy Resin Art</option>
+                                    <option value="paintings">Custom Paintings</option>
+                                    <option value="tables">Custom Tables</option>
+                                    <option value="wall-art">Wall Art</option>
+                                    <option value="multiple">Multiple Services</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="fandom" class="form-label">Fandom/Theme</label>
+                                <input type="text" id="fandom" name="fandom" placeholder="e.g., Anime, Marvel, Harry Potter, Gaming" class="form-input" data-testid="contact-fandom">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="budget" class="form-label">Estimated Budget</label>
+                                <select id="budget" name="budget" class="form-select" data-testid="contact-budget">
+                                    <option value="">Select budget range</option>
+                                    <option value="25-75">$25 - $75</option>
+                                    <option value="75-150">$75 - $150</option>
+                                    <option value="150-350">$150 - $350</option>
+                                    <option value="350-500">$350 - $500</option>
+                                    <option value="500+">$500+</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message" class="form-label">Project Details *</label>
+                                <textarea id="message" name="message" rows="5" required placeholder="Describe your vision, preferred size, colors, specific characters, or any other details..." class="form-textarea" data-testid="contact-message"></textarea>
+                            </div>
+
+                            <div class="form-checkbox">
+                                <input type="checkbox" id="newsletter" name="newsletter" class="checkbox-input" data-testid="contact-newsletter">
+                                <label for="newsletter" class="checkbox-label">
+                                    I'd like to receive updates about new artwork and special offers
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-full" id="form-submit" data-testid="contact-submit">
+                                Send Quote Request
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <div class="contact-info-section">
+                        <h3 class="contact-info-title">Contact Information</h3>
+                        
+                        <div class="contact-details">
+                            <div class="contact-detail">
+                                <div class="contact-icon" id="mail-icon"></div>
+                                <div class="contact-text">
+                                    <div class="contact-label">Email</div>
+                                    <div class="contact-value">hello@fandomfurnishings.com</div>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-detail">
+                                <div class="contact-icon" id="phone-icon"></div>
+                                <div class="contact-text">
+                                    <div class="contact-label">Phone</div>
+                                    <div class="contact-value">(555) 123-4567</div>
+                                </div>
+                            </div>
+
+                            <div class="contact-detail">
+                                <div class="contact-icon" id="contact-instagram-icon"></div>
+                                <div class="contact-text">
+                                    <div class="contact-label">Instagram</div>
+                                    <a href="https://www.instagram.com/fandomfurnishings/" target="_blank" rel="noopener noreferrer" class="contact-link" data-testid="contact-instagram-link">
+                                        @fandomfurnishings
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="contact-detail">
+                                <div class="contact-icon" id="clock-icon"></div>
+                                <div class="contact-text">
+                                    <div class="contact-label">Turnaround Time</div>
+                                    <div class="contact-value">3-4 weeks for custom pieces</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Section -->
+                    <div class="faq-card">
+                        <h4 class="faq-title">Frequently Asked Questions</h4>
+                        
+                        <div class="faq-items">
+                            <div class="faq-item">
+                                <div class="faq-question">Do you work with all fandoms?</div>
+                                <div class="faq-answer">Yes! We love working with all fandoms - anime, gaming, movies, TV shows, books, and more.</div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">Can I see progress updates?</div>
+                                <div class="faq-answer">Absolutely! We share progress photos and updates throughout the creation process.</div>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <div class="faq-question">Do you ship nationwide?</div>
+                                <div class="faq-answer">Yes, we ship all across the US with secure packaging to protect your custom artwork.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-brand-info">
+                        <div class="footer-brand-icon" id="footer-palette-icon"></div>
+                        <div class="footer-brand-text">
+                            <div class="footer-brand-title">Fandom Furnishings</div>
+                            <div class="footer-brand-subtitle">Custom Art & Decor</div>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Bringing your favorite fandoms to life through handcrafted art and custom decor.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/fandomfurnishings/" target="_blank" rel="noopener noreferrer" class="footer-social-link" data-testid="footer-instagram">
+                            <div id="footer-instagram-icon"></div>
+                        </a>
+                        <a href="#" class="footer-social-link" data-testid="footer-facebook">
+                            <div id="footer-facebook-icon"></div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-section-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><button onclick="scrollToSection('services')" class="footer-link">Engraved Cups</button></li>
+                        <li><button onclick="scrollToSection('services')" class="footer-link">Wood Burning</button></li>
+                        <li><button onclick="scrollToSection('services')" class="footer-link">Epoxy Art</button></li>
+                        <li><button onclick="scrollToSection('services')" class="footer-link">Custom Paintings</button></li>
+                        <li><button onclick="scrollToSection('services')" class="footer-link">Tables</button></li>
+                        <li><button onclick="scrollToSection('services')" class="footer-link">Wall Art</button></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-section-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><button onclick="scrollToSection('gallery')" class="footer-link">Gallery</button></li>
+                        <li><button onclick="scrollToSection('services')" class="footer-link">Services</button></li>
+                        <li><button onclick="scrollToSection('about')" class="footer-link">About</button></li>
+                        <li><button onclick="scrollToSection('contact')" class="footer-link">Contact</button></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-section-title">Contact Info</h4>
+                    <div class="footer-contact">
+                        <div>hello@fandomfurnishings.com</div>
+                        <div>(555) 123-4567</div>
+                        <div>3-4 week turnaround</div>
+                        <div>Shipping nationwide</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Fandom Furnishings. All rights reserved. | Made with ❤️ for fandom lovers</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()" data-testid="lightbox-close">
+            <div id="close-icon"></div>
+        </button>
+        <img id="lightbox-image" class="lightbox-image" alt="" data-testid="lightbox-image">
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <div id="toast-content" class="toast-content"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

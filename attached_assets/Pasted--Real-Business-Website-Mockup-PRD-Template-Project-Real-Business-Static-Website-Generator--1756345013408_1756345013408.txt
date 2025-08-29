@@ -1,0 +1,227 @@
+# Real Business Website Mockup PRD Template
+
+**Project:** Real Business Static Website Generator  
+**Social Media Source:** [Instagram/Facebook URL]  
+**Business Type:** [e.g., Restaurant, Salon, Fitness Studio, Art Gallery]  
+**Must-Have Features:** [e.g., Netlify forms, art gallery, shopping cart, booking system]
+
+---
+
+## 1. Website Purpose
+
+Create a **static HTML/CSS website** for a real business based on their social media presence. The site should extract branding, content, and styling cues from the provided social profile while incorporating modern web standards and the specified must-have features.
+
+---
+
+## 2. Content Strategy
+
+### Social Media Content Extraction
+
+- **Business Name & Branding:** Extract from social profile
+- **Visual Style:** Analyze color palette, typography, and aesthetic from posts
+- **Content Tone:** Match the voice and messaging style from captions
+- **Services/Products:** Identify offerings from posts and highlights
+- **Location & Contact:** Extract available contact information
+- **Images:** Use social media posts as inspiration for layout and content areas
+
+### Shared Configuration
+
+- **Global Config File:** `/_config/site-config.js` containing:
+    - Business name, tagline, contact info
+    - Brand colors extracted from social media
+    - Navigation structure
+    - Social media links
+- **Shared Components:**
+    - `/_includes/header.html`
+    - `/_includes/footer.html`
+    - `/_includes/contact-info.html`
+
+---
+
+## 3. Pages & Sections
+
+### Home Page
+
+- Header with extracted business name/logo and main navigation
+- Hero section with tagline/messaging style matching social media voice
+- About section based on social media bio/story highlights
+- **Services/Products** section with 3-6 offerings identified from social posts
+- **Social Feed Integration:** Display recent posts or Instagram-style grid
+- **Must-Have Features Integration** (as specified)
+- Footer with extracted contact info and social links
+
+### Service/Product Detail Pages
+
+- Individual pages for each major offering
+- Content and imagery style matching social media aesthetic
+- Pricing (if available from social media)
+- Call-to-action buttons
+- Integration with must-have features (booking, cart, etc.)
+
+### Must-Have Feature Pages
+
+#### If "Netlify Forms" specified:
+
+- Contact page with working Netlify form
+- Newsletter signup integration
+
+#### If "Art Gallery" specified:
+
+- Gallery page with lightbox functionality
+- Categories/collections based on social media content themes
+
+#### If "Shopping Cart" specified:
+
+- Product catalog page
+- Individual product pages
+- Static cart functionality (Snipcart or similar)
+
+#### If "Booking System" specified:
+
+- Services booking page
+- Calendar integration placeholder
+
+### Contact Page
+
+- Extracted business address, phone, email
+- Contact form (Netlify if specified)
+- Embedded Google Map with real business location
+- Social media integration
+
+---
+
+## 4. Design & Technical Guidelines
+
+### Brand Extraction & Styling
+
+- **Color Palette:** Extract 2-4 primary colors from social media posts
+- **Typography:** Choose fonts that match the social media aesthetic
+- **Visual Style:** Replicate the mood/tone from social posts (modern, rustic, elegant, playful, etc.)
+- **No gradients:** Flat design using extracted brand colors
+- **Imagery Style:** Match the photography/graphic style from social posts
+
+### Technical Requirements
+
+- **Responsive Design:** Mobile-first approach
+- **Performance:** Optimized images, minimal CSS/JS
+- **Accessibility:** Semantic HTML, proper contrast, alt text
+- **SEO Ready:** Meta tags, structured data
+- **Static Site Compatible:** Works with Netlify, GitHub Pages, Vercel
+
+### File Structure
+
+```
+/index.html
+/services/
+    service1.html
+    service2.html
+    ...
+/gallery/ (if art gallery specified)
+    index.html
+/shop/ (if shopping cart specified)
+    index.html
+    product1.html
+    ...
+/booking/ (if booking specified)
+    index.html
+/contact.html
+/_config/
+    site-config.js
+/_includes/
+    header.html
+    footer.html
+    contact-info.html
+/assets/
+    /css/
+        main.css
+        components.css
+    /js/
+        main.js
+    /images/
+```
+
+---
+
+## 5. Must-Have Features Implementation
+
+### Netlify Forms
+
+```html
+<form name="contact" method="POST" data-netlify="true">
+  <!-- Form fields based on business type -->
+</form>
+```
+
+### Art Gallery
+
+- Responsive grid layout
+- Lightbox functionality (CSS/JS)
+- Category filtering
+- Social media integration
+
+### Shopping Cart
+
+- Product grid with extracted items from social media
+- Static cart functionality (Snipcart integration)
+- Checkout flow
+
+### Booking System
+
+- Service selection based on social media offerings
+- Calendar placeholder/integration
+- Contact form for bookings
+
+---
+
+## 6. Social Media Integration
+
+- **Instagram Feed:** Display recent posts in grid format
+- **Social Proof:** Embed reviews/testimonials from social comments
+- **Brand Consistency:** Maintain visual consistency with social presence
+- **Cross-Platform Links:** Easy navigation between website and social profiles
+
+---
+
+## 7. Content Guidelines
+
+### Tone & Voice
+
+- Match the communication style from social media captions
+- Maintain brand personality consistency
+- Use similar hashtags and keywords
+
+### Imagery
+
+- Style guide based on social media visual themes
+- Placeholder images matching the aesthetic
+- Consistent filtering/editing style
+
+---
+
+## Example Usage
+
+**Input:**
+
+- **Social Media Source:** https://instagram.com/joes_auto_repair
+- **Business Type:** Auto Repair Shop
+- **Must-Have Features:** Netlify forms, booking system
+
+**Output:** A complete static website with:
+
+- Brand colors extracted from Instagram posts
+- Tone matching social media captions
+- Services identified from post content
+- Working contact forms via Netlify
+- Appointment booking system
+- Shared header/footer components
+- Configuration file with all business details
+
+---
+
+## Template Prompt
+
+> Generate a modern static HTML website for the business at [Social Media URL]. This is a [Business Type] and I need these must-have features: [comma-separated list]. Extract the branding, colors, and content style from their social media presence. Use shared configuration files and components for maintainability. Make it compatible with static site hosting.
+
+---
+
+_This template ensures consistent, professional websites that authentically represent real businesses while incorporating modern web functionality and maintainable code structure._
